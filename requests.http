@@ -1,0 +1,35 @@
+# POST http://localhost:3000/api/clientes HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "cedula": "12345678910",
+#     "nombres": "Dylan",
+#     "apellidos": "Bolivar Cañas",
+#     "telefono": 3001234567,
+#     "direccion": "crr 123 #12c 123",
+#     "ciudad": "Medellín",
+#     "fechaNacimiento": "2003-11-05",
+#     "correo": "santiago123@gmail.com",
+#     "contraseña": "123456789",
+#     "estado": 1
+# }
+
+# GET http://localhost:3000/api/servicios HTTP/1.1
+
+# PUT http://localhost:3000/api/clientes/656a57037f711e7d2b04d3e0 HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "cedula": "12345678910",
+#     "nombres": "Dylan",
+#     "apellidos": "Bolivar",
+#     "telefono": 3001234567,
+#     "direccion": "crr 123 #12c 123",
+#     "ciudad": "Medellín",
+#     "fechaNacimiento": "2003-11-05",
+#     "correo": "santiago123@gmail.com",
+#     "contraseña": "123456789",
+#     "estado": 1
+# }
+
+# DELETE http://localhost:3000/api/clientes/656a57037f711e7d2b04d3e0 HTTP/1.1
