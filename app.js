@@ -13,6 +13,19 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // middlewares
+if (process.env.NODE_ENV === 'development') {
+  app.use(cors());
+} else {
+  const corsOptions = {
+    origin: ["http://localhost:3000", "https://mi-aplicacion-flutter.com"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"],
+    credentials: true,
+  };
+  app.use(cors(corsOptions));
+}
+
 app.use(express.json());
 app.use("/api", citaRoute);
 app.use("/api", pedidoRoute);
