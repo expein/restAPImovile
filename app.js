@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 const citaRoute = require("./routes/citas")
 const pedidoRoute = require("./routes/pedidos")
