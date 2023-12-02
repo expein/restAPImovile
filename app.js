@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(cors());
 } else {
   const corsOptions = {
-    origin: ["http://localhost:3000", "https://mi-aplicacion-flutter.com"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"],
