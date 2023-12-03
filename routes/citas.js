@@ -41,7 +41,7 @@ router.delete("/citas/:id", (req, res) => {
 // update a user
 router.put("/citas/:id", (req, res) => {
   const { id } = req.params;
-  const { fechaRegistro, costoTotal, estado} = req.body;
+  const { fechaRegistro, costoTotal, servicio, estado} = req.body;
   citasSchema
     .updateOne(
       { _id: id },

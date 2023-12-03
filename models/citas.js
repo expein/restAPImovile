@@ -44,6 +44,10 @@ const citasSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  servicio: {
+    type: String,
+    required: true
+  },
   estado: {
     type: Number,
     required: true,
