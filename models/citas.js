@@ -1,35 +1,35 @@
 const mongoose = require("mongoose");
 
-const detalleCitaSchema = mongoose.Schema({
-    empleado: {
-      type: String,
-      required: true
-    },
-    servicio:{
-      type: String,
-      required: true
-    },
-    fechaCita: {
-      type: String,
-      required: true,
-    },
-    horaCita: {
-      type: String,
-      required: true,
-    },
-    descuento: {
-      type: Number,
-      required: true,
-    },
-    costoServicio: {
-        type: Number,
-        required: true,
-    },
-    estado: {
-        type: Number,
-        required: true,
-    }
-})
+// const detalleCitaSchema = mongoose.Schema({
+//     empleado: {
+//       type: String,
+//       required: true
+//     },
+//     servicio:{
+//       type: String,
+//       required: true
+//     },
+//     fechaCita: {
+//       type: String,
+//       required: true,
+//     },
+//     horaCita: {
+//       type: String,
+//       required: true,
+//     },
+//     descuento: {
+//       type: Number,
+//       required: true,
+//     },
+//     costoServicio: {
+//         type: Number,
+//         required: true,
+//     },
+//     estado: {
+//         type: Number,
+//         required: true,
+//     }
+// })
 
 const citasSchema = mongoose.Schema({
   cliente: {
@@ -48,7 +48,7 @@ const citasSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  detalleCitas: [detalleCitaSchema],
+  // detalleCitas: [detalleCitaSchema],
 });
 
 module.exports = mongoose.model("citas", citasSchema);

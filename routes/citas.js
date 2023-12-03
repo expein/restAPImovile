@@ -41,11 +41,11 @@ router.delete("/citas/:id", (req, res) => {
 // update a user
 router.put("/citas/:id", (req, res) => {
   const { id } = req.params;
-  const { fechaRegistro, costoTotal, estado, detalleCitas} = req.body;
+  const { fechaRegistro, costoTotal, estado} = req.body;
   citasSchema
     .updateOne(
       { _id: id },
-      { $set: { fechaRegistro, costoTotal, estado, detalleCitas } }
+      { $set: { fechaRegistro, costoTotal, estado } }
     )
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
