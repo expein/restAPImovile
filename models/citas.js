@@ -48,6 +48,13 @@ const citasSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  fechaCita:{
+    type: String,
+    required: true
+  },
+  horaCita:{
+    type: String,
+  },
   estado: {
     type: Number,
     required: true,
