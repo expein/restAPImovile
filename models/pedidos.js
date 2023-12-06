@@ -1,19 +1,19 @@
 const mongoose = require("mongoose");
 
-const detallePedidoSchema = mongoose.Schema({
-  producto: {
-    type: String,
-    required: true,
-  },
-  cantidadProducto: {
-    type: Number,
-    required: true,
-  },
-  precioUnitario: {
-    type: Number,
-    required: true,
-  }
-});
+// const detallePedidoSchema = mongoose.Schema({
+//   producto: {
+//     type: String,
+//     required: true,
+//   },
+//   cantidadProducto: {
+//     type: Number,
+//     required: true,
+//   },
+//   precioUnitario: {
+//     type: Number,
+//     required: true,
+//   }
+// });
 
 const pedidosSchema = mongoose.Schema({
   cliente: {
@@ -32,7 +32,19 @@ const pedidosSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  detallePedido: [detallePedidoSchema],
+  producto: {
+    type: String,
+    required: true,
+  },
+  cantidadProducto: {
+    type: Number,
+    required: true,
+  },
+  precioUnitario: {
+    type: Number,
+    required: true,
+  }
+  // detallePedido: [detallePedidoSchema],
 });
 
 module.exports = mongoose.model("pedidos", pedidosSchema);
