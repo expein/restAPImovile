@@ -42,13 +42,11 @@ router.delete("/clientes/:id", (req, res) => {
 router.put("/clientes/:id", (req, res) => {
   const { id } = req.params;
   const {
-    cedula,
     nombres,
     apellidos,
     telefono,
     direccion,
     ciudad,
-    fechaNacimiento,
     correo,
     contraseña,
     estado,
@@ -58,13 +56,11 @@ router.put("/clientes/:id", (req, res) => {
       { _id: id },
       {
         $set: {
-          cedula,
           nombres,
           apellidos,
           telefono,
           direccion,
           ciudad,
-          fechaNacimiento,
           correo,
           contraseña,
           estado,

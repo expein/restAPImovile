@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const clientesSchema = mongoose.Schema({
-  cedula: {
-    type: String,
-    required: true,
-  },
   nombres: {
     type: String,
     required: true,
@@ -22,10 +18,6 @@ const clientesSchema = mongoose.Schema({
     required: true,
   },
   ciudad: {
-    type: String,
-    required: true
-  },
-  fechaNacimiento:{
     type: String,
     required: true
   },
