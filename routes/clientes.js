@@ -1,5 +1,7 @@
 const express = require("express");
 const clientesSchema = require("../models/clientes");
+const mongoose = require("mongoose");
+const {Types} = mongoose;
 
 const router = express.Router();
 
@@ -14,14 +16,34 @@ router.post("/clientes", (req, res) => {
 
 // get all users
 router.get("/clientes", (req, res) => {
-  clientesSchema
-    .find()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+  const { parametro } = req.params;
+
+  // Verificar si el parámetro es un ObjectId válido
+  if (Types.ObjectId.isValid(parametro)) {
+    // Si es un ObjectId, buscar por ID
+    User.findById(parametro)
+      .then((data) => {
+        if (!data) {
+          return res.status(404).json({ message: "Cliente no encontrado" });
+        }
+        res.json(data);
+      })
+      .catch((error) => res.status(500).json({ message: error.message }));
+  } else {
+    // Si no es un ObjectId válido, buscar por nombre de usuario
+    User.findOne({ Usuario: parametro })
+      .then((data) => {
+        if (!data) {
+          return res.status(404).json({ message: "Cliente no encontrado" });
+        }
+        res.json(data);
+      })
+      .catch((error) => res.status(500).json({ message: error.message }));
+  }
 });
 
 // get a user
-router.get("/clientes/:id", (req, res) => {
+router.get("/clientes/:parametro", (req, res) => {
   const { id } = req.params;
   clientesSchema
     .findById(id)
