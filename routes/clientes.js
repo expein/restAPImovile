@@ -15,7 +15,7 @@ router.post("/clientes", (req, res) => {
 });
 
 // get all users
-router.get("/clientes", (req, res) => {
+router.get("/clientes/:parametro", (req, res) => {
   const { parametro } = req.params;
 
   // Verificar si el parámetro es un ObjectId válido
