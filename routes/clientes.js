@@ -25,11 +25,12 @@ router.get("/clientes", (req, res) => {
 // get a user
 router.get("/clientes/:parametro", (req, res) => {
   const { parametro } = req.params;
+  const cliente = clientesSchema(req.body);
 
   // Verificar si el parámetro es un ObjectId válido
   if (Types.ObjectId.isValid(parametro)) {
     // Si es un ObjectId, buscar por ID
-    User.findById(parametro)
+    cliente.findById(parametro)
       .then((data) => {
         if (!data) {
           return res.status(404).json({ message: "Cliente no encontrado" });
@@ -39,7 +40,7 @@ router.get("/clientes/:parametro", (req, res) => {
       .catch((error) => res.status(500).json({ message: error.message }));
   } else {
     // Si no es un ObjectId válido, buscar por nombre de usuario
-    User.findOne({ correo: parametro })
+    cliente.findOne({ correo: parametro })
       .then((data) => {
         if (!data) {
           return res.status(404).json({ message: "Cliente no encontrado" });
