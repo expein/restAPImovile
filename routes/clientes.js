@@ -39,7 +39,7 @@ router.get("/clientes/:parametro", (req, res) => {
       .catch((error) => res.status(500).json({ message: error.message }));
   } else {
     // Si no es un ObjectId válido, buscar por nombre de usuario
-    User.findOne({ Usuario: parametro })
+    User.findOne({ correo: parametro })
       .then((data) => {
         if (!data) {
           return res.status(404).json({ message: "Cliente no encontrado" });
