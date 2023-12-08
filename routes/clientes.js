@@ -15,6 +15,14 @@ router.post("/clientes", (req, res) => {
 });
 
 // get all users
+router.get("/clientes", (req, res) => {
+  clientesSchema
+    .find()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
+// get a user
 router.get("/clientes/:parametro", (req, res) => {
   const { parametro } = req.params;
 
@@ -40,15 +48,6 @@ router.get("/clientes/:parametro", (req, res) => {
       })
       .catch((error) => res.status(500).json({ message: error.message }));
   }
-});
-
-// get a user
-router.get("/clientes/:parametro", (req, res) => {
-  const { id } = req.params;
-  clientesSchema
-    .findById(id)
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
 });
 
 // delete a user
