@@ -13,7 +13,7 @@ const productosSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  SaldoInventario: {
+  saldoInventario: {
     type: Number,
     required: true,
   },
